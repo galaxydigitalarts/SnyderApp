@@ -5,6 +5,6 @@
         <bitmap
             android:gravity="center"
             android:scaleType="fitCenter"
-            android:src="@drawable/snyder"></bitmap>
+            android:src="@drawable/logosplash"></bitmap>
     </item>
 </layer-list>
