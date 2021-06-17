@@ -58,23 +58,30 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         // Check which button is pressed
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                switch (item.getItemId())
+                {
                     case R.id.home:
                         linearLayout.setVisibility(View.INVISIBLE);
                         overridePendingTransition(0, 0);
 
                         webView.loadUrl("http://theeconomiccollapseblog.com");
-                        webView.setWebViewClient(new WebViewClient() {
+                        webView.setWebViewClient(new WebViewClient()
+                        {
                             @Override
-                            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request)
+                            {
 
-                                if ((String.valueOf(request.getUrl())).contains("theeconomiccollapseblog.com") && !(String.valueOf(request.getUrl())).contains("twitter.com") && !(String.valueOf(request.getUrl())).contains("facebook.com")) {
+                                if ((String.valueOf(request.getUrl())).contains("theeconomiccollapseblog.com") && !(String.valueOf(request.getUrl())).contains("twitter.com") && !(String.valueOf(request.getUrl())).contains("facebook.com"))
+                                {
                                     view.loadUrl(String.valueOf(request.getUrl()));
 
-                                } else {
+                                } else
+                                    {
                                     Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
                                     view.getContext().startActivity(intent);
                                 }
